@@ -51,4 +51,7 @@ def kpp(data, n_clusters):
 	centroid_assigners = [tf.assign(centroid, centroid_val) for centroid in centroids]
 	
 	# Euclid distance calculator
+	x_pl = tf.placeholder(tf.float64, name="x_placeholder_euclid")
+	y_pl = tf.placeholder(tf.float64, name="y_placeholder_euclid")
+	dist = tf.reduce_sum(tf.sqrt(tf.square(tf.sub(x_pl, y_pl))))
 	
